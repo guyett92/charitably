@@ -1,6 +1,10 @@
 import React from 'react';
 import Navigation from '../Navigation/index';
 import Charities from '../Charities/index';
+import Intro from '../Intro/index';
+import {
+    Container
+} from 'semantic-ui-react';
 
 export default function Layout({user, authenticated }) {
     return (
@@ -9,7 +13,10 @@ export default function Layout({user, authenticated }) {
                 user={user}
                 authenticated={authenticated}
             />
-            <Charities />
+            <Container>
+                <Intro />
+                <Charities />
+            </Container>
         </main>
     )
 };

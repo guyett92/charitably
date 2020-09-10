@@ -25,7 +25,6 @@ export default class App extends Component {
                     user={this.state.user}
                     authenticated={this.state.authenticated}
                 />
-                <h1>Charitably</h1>
             </div>
         )
     }

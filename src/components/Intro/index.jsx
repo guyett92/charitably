@@ -6,7 +6,7 @@ export default function Intro() {
 
     return (
         <div>
-            
+            <Header as='h1'>Charitably</Header>
         </div>
     );
 }
