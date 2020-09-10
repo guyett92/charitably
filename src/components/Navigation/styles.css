@@ -1,10 +1,10 @@
 nav {
-    background-color: #282c34;
+    background-color: #993299;
     height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: #1e0a1e;
 }

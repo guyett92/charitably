@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { auth } from '../../services/firebase';
-import Navigation from '../../components/Navigation/index';
+import Layout from '../../components/Layout';
 
 export default class App extends Component {
     state = {
         authenticated: false,
-        user: null
+        user: null,
     }
 
     componentDidMount() {
@@ -21,7 +21,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Navigation 
+                <Layout 
                     user={this.state.user}
                     authenticated={this.state.authenticated}
                 />
