@@ -5,6 +5,7 @@ An app that allows users to search for a charity once logged in.
 * Hosting: Firebase
 * Backend: Firebase
 * Authentication: Firebase
+* Chat: Firebase
 * Styling: Semantic UI
 * React
 * Node
@@ -16,6 +17,7 @@ An app that allows users to search for a charity once logged in.
 ## User Stories
 * Users can login with Google.
 * Users can search for a charity.
+* Users can chat in an open room.
 
 ## Additional Info
 * Includes real tears from failed attempts with other stacks in the timeframe!!

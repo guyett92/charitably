@@ -1,23 +1,23 @@
 import React from 'react';
-import Navigation from '../Navigation/index';
 import Charities from '../Charities/index';
 import Intro from '../Intro/index';
 import {
-    Container
+    Container,
 } from 'semantic-ui-react';
 
 export default function Layout({user, authenticated }) {
     return (
         <main>
-            <Navigation
-                user={user}
-                authenticated={authenticated}
-            />
             <Container>
                 <Intro />
-                <Charities
-                    authenticated={authenticated}
-                />
+                {authenticated
+                ?
+                    <Charities
+                        authenticated={authenticated}
+                    />
+                :
+                    <p>Charitably is a super-lightweight app that allows a user to search for charities. Please login to take advantage of functionality.</p>
+                    }
             </Container>
         </main>
     )
