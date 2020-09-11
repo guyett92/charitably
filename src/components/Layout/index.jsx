@@ -15,7 +15,9 @@ export default function Layout({user, authenticated }) {
             />
             <Container>
                 <Intro />
-                <Charities />
+                <Charities
+                    authenticated={authenticated}
+                />
             </Container>
         </main>
     )
