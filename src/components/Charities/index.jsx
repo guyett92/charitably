@@ -24,6 +24,7 @@ export default class Charities extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.handleGetCharities(this.state.value);
+        this.setState({value: ''});
     }
     
     handleGetCharities = async search => {
@@ -45,28 +46,31 @@ export default class Charities extends Component {
                         <Button type='submit'>Submit</Button>
                     </Form.Field>
                 </Form>
+                <div className="ui divider"></div>
                 {this.state.charities.length > 0 &&
-                    <Card.Group>
+                    <Card.Group centered>
                         {this.state.charities.map(( charity, idx ) => (
                         <Card
+                            key={idx}
+                            raised
                             color='teal'
                             link
-                            href={this.state.charities[idx].charityNavigatorURL}
+                            href={charity.charityNavigatorURL}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Card.Content header={this.state.charities[idx].charityName.toLowerCase().split(' ').map(function(word) { return word[0].toUpperCase() + word.substr(1) }).join(' ')} meta={this.state.charities[idx].irsClassification.classification} />
+                            <Card.Content header={charity.charityName.toLowerCase().split(' ').map(function(word) { return word[0].toUpperCase() + word.substr(1) }).join(' ')} meta={charity.irsClassification.classification} />
                             <Card.Content  description={[
                                 'The charity is classified as ',
-                                this.state.charities[idx].irsClassification.nteeClassification,
+                                charity.irsClassification.nteeClassification,
                                 ' and ',
-                                this.state.charities[idx].irsClassification.deductibility.toLowerCase(),
+                                charity.irsClassification.deductibility.toLowerCase(),
                                 '. The organization became a charity on ',
-                                this.state.charities[idx].irsClassification.rulingDate,
+                                charity.irsClassification.rulingDate,
                                 '. They are also classified as ',
-                                this.state.charities[idx].irsClassification.nteeType,
+                                charity.irsClassification.nteeType,
                                 ' and located in ',
-                                this.state.charities[idx].mailingAddress.city.toLowerCase().split(' ').map(function(word) { return word[0].toUpperCase() + word.substr(1) }).join(' ') + ', ' + this.state.charities[idx].mailingAddress.stateOrProvince,
+                                charity.mailingAddress.city.toLowerCase().split(' ').map(function(word) { return word[0].toUpperCase() + word.substr(1) }).join(' ') + ', ' + charity.mailingAddress.stateOrProvince,
                                 '.'
                             ].join('')}/>
                         </Card>
