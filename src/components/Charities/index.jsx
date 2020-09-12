@@ -11,6 +11,7 @@ import {
     Dimmer,
     Loader
 } from 'semantic-ui-react';
+import './styles.css';
 
 
 export default class Charities extends Component {
@@ -95,7 +96,7 @@ export default class Charities extends Component {
                             ))}
                         </Card.Group>
                         <Divider />
-                        <Grid centered>
+                        <Grid centered class="margin-top">
                             <Grid.Row>
                                 <Grid.Column width={12}>
                                     <Pagination 
@@ -112,6 +113,11 @@ export default class Charities extends Component {
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+
                     </article>
                 }
 
