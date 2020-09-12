@@ -9,6 +9,7 @@ import {
 import Layout from '../../components/Layout';
 import Chat from '../Chat';
 import Navigation from '../../components/Navigation/index';
+import Footer from '../../components/Footer';
 
 export default class App extends Component {
     state = {
@@ -28,7 +29,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div class="container-1">
                 <Navigation
                     user={this.state.user}
                     authenticated={this.state.authenticated}
@@ -50,6 +51,7 @@ export default class App extends Component {
                         />
                     }/>
                 </Switch>
+                <Footer />
             </div>
         )
     }
